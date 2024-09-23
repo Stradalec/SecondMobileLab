@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.jakewharton.timber:timber:5.0.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,3 +46,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+
