@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -22,6 +23,13 @@ class MainActivity : AppCompatActivity() {
         logButton.setOnClickListener {
             val message = inputText.text.toString()
             Log.v(TAG, "From EditText: $message")
+        }
+
+        Timber.plant(Timber.DebugTree())
+        val anotherLog = findViewById<Button>(R.id.button_timber)
+        anotherLog.setOnClickListener {
+            val message = inputText.text.toString()
+            Timber.v(message)
         }
     }
 }
