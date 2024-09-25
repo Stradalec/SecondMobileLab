@@ -1,55 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
-    <EditText
-        android:layout_marginTop="200dp"
-        android:id="@+id/edit_text"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="1" />
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp">
 
-    <Button
-        android:id="@+id/button_blackText"
-        android:layout_width="100dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="Черный текст" />
+<EditText
+    android:id="@+id/edit_text"
+    android:layout_width="100dp"
+    android:layout_height="48dp"
+    android:layout_marginTop="200dp"
+    android:hint="text"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
 
+   <Button
+       android:id="@+id/button_blackText"
+       android:layout_height="wrap_content"
+       android:layout_width="180dp"
+       android:layout_margin="10dp"
+       android:text="Черный текст"
+       app:layout_constraintTop_toBottomOf="@+id/edit_text"
+       app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/button_redText"
-        android:layout_weight="1"
-        android:layout_width="100dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="Красный текст" />
+        android:layout_margin="10dp"
+        android:text="Красный текст"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text" />
 
     <Button
         android:id="@+id/button_sizeFirst"
-        android:layout_width="100dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="Размер - 8sp" />
+        android:layout_width="180dp"
+        android:layout_margin="10dp"
+        android:text="Малый размер текста"
+        app:layout_constraintTop_toBottomOf="@+id/button_blackText"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/button_sizeSecond"
-        android:layout_weight="1"
-        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Размер - 24sp" />
+        android:layout_width="180dp"
+        android:layout_margin="10dp"
+        android:text="Большой размер текста"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_redText" />
 
     <Button
         android:id="@+id/button_white"
-        android:layout_width="100dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="Белый фон" />
+        android:layout_width="180dp"
+        android:layout_margin="10dp"
+        android:text="Белый фон    текста"
+        app:layout_constraintTop_toBottomOf="@+id/button_sizeFirst"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/button_yellow"
-        android:layout_weight="1"
-        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Желтый фон" />
-</LinearLayout>
+        android:layout_width="180dp"
+        android:layout_margin="10dp"
+        android:text="Желтый фон текста"
+        app:layout_constraintTop_toBottomOf="@+id/button_sizeSecond"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
