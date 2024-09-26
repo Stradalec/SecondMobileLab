@@ -1,6 +1,9 @@
 package com.example.secondmobilelab
 
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,11 +14,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-
+        val Text:EditText = findViewById(R.id.edit_text)
+        val BlackTextButton: Button = findViewById(R.id.button_blackText)
+        val RedTextButton: Button = findViewById(R.id.button_redText)
+        val SmallSizeButton: Button = findViewById(R.id.button_sizeFirst)
+        val BigSizeButton: Button = findViewById(R.id.button_sizeSecond)
+        val WhiteButton: Button = findViewById(R.id.button_white)
+        val YellowButton: Button = findViewById(R.id.button_yellow)
+        BlackTextButton.setOnClickListener()
+        {
+            Text.setTextColor(Color.BLACK);
         }
+
+        RedTextButton.setOnClickListener()
+        {
+            Text.setTextColor(Color.RED);
+        }
+
+        SmallSizeButton.setOnClickListener()
+        {
+            Text.setTextSize(8F);
+        }
+
+        BigSizeButton.setOnClickListener()
+        {
+            Text.setTextSize(24F);
+        }
+
+        WhiteButton.setOnClickListener()
+        {
+            Text.setBackgroundColor(Color.WHITE);
+        }
+
+        YellowButton.setOnClickListener()
+        {
+            Text.setBackgroundColor(Color.YELLOW);
+        }
+
     }
 }
